@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Lab.TfL.RestApi.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "A2,A406",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
