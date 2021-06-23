@@ -24,7 +24,7 @@ namespace Lab.TfL.RestApi.Client.Common
             this.httpClientFactory = httpClientFactory;
         }
 
-        public async Task<ApiResponse<T>> GetAsync<T>(Uri requestUrl, string namedClient, string bearerToken, IDictionary<string, string> headers = null)
+        public async Task<ApiResponse<T>> GetAsync<T>(Uri requestUrl, string namedClient, string bearerToken = null, IDictionary<string, string> headers = null)
         {
             return await CreateResponseAsync<T>(requestUrl, namedClient, HttpMethod.Get, null, bearerToken);
         }
@@ -34,7 +34,7 @@ namespace Lab.TfL.RestApi.Client.Common
             return await CreateResponseAsync<T>(requestUrl, namedClient, HttpMethod.Get, jsonObject, bearerToken, headers);
         }
 
-        private async Task<ApiResponse<T>> CreateResponseAsync<T>(Uri requestUrl, string namedClient, HttpMethod httpMethod, object jsonObject, string bearerToken, IDictionary<string, string> headers = null)
+        private async Task<ApiResponse<T>> CreateResponseAsync<T>(Uri requestUrl, string namedClient, HttpMethod httpMethod, object jsonObject, string bearerToken = null, IDictionary<string, string> headers = null)
         {
             var response = new ApiResponse<T>();
             try
